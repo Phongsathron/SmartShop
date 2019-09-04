@@ -64,8 +64,8 @@ This is the first exercise of SOP subject.
    
    **Response**
    ```json
-       {
-         "Success": true|false
-       }
+     {
+       "Success": true|false
+     }
    ```
    
