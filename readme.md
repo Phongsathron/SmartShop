@@ -43,18 +43,18 @@ This is the first exercise of SOP subject.
     **Request**
     ```json
    {
-   	"productName": "Mens Citizen Watch AW1530-65E",
-   	"brand": "Citizen",
-   	"price": 259.0,
-   	"content": "Citizen AW1530-65E is an amazing and handsome Gents watch.",
-   	"imageURL": "https://d1rkccsb0jf1bk.cloudfront.net/products/100002337/main/large/aw1530-65e_bracelet_high_res-1467210908-6942.jpg"
+   	  "productName": "Mens Citizen Watch AW1530-65E",
+   	  "brand": "Citizen",
+   	  "price": 259.0,
+   	  "content": "Citizen AW1530-65E is an amazing and handsome Gents watch.",
+   	  "imageURL": "https://d1rkccsb0jf1bk.cloudfront.net/products/100002337/main/large/aw1530-65e_bracelet_high_res-1467210908-6942.jpg"
    }
    ```
    
    **Response**
    ```json
    {
-      "Success": true|false
+     "Success": true|false
    }
    ```
    
