@@ -1,6 +1,5 @@
 package com.smartshop;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,12 +17,12 @@ public class SmartshopController {
 
     @RequestMapping("/product/all")
     public List<Watch> index(){
-        return SmartshopStore.getAll();
+        return SmartshopFactory.getAll();
     }
 
     @RequestMapping("/product/add")
     public Map<String, Boolean> add(@RequestBody Watch watch){
-        if (SmartshopStore.add(watch)) {
+        if (SmartshopFactory.add(watch)) {
             HashMap<String, Boolean> response = new HashMap<>();
             response.put("Success", true);
             return response;
@@ -36,7 +34,7 @@ public class SmartshopController {
 
     @RequestMapping("/product/remove")
     public Map<String, Boolean> remove(@RequestParam(value = "id") int id){
-        if(SmartshopStore.remove(id)){
+        if(SmartshopFactory.remove(id)){
             HashMap<String, Boolean> response = new HashMap<>();
             response.put("Success", true);
             return response;
@@ -47,7 +45,7 @@ public class SmartshopController {
     }
 
     public static void main(String[] args){
-        SmartshopStore.initData();
+        SmartshopFactory.initData();
         SpringApplication.run(SmartshopController.class, args);
     }
 }

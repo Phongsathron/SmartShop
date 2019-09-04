@@ -3,7 +3,7 @@
 This is the first exercise of SOP subject.
 
 ### End points
-- `GET` \product\all
+- **`GET`** \product\all
 
    Get all products list
    
@@ -36,7 +36,7 @@ This is the first exercise of SOP subject.
   ]
   ```
   
- - `POST` \product\add
+ - **`POST`** \product\add
     
     Add product to watch shop.
     
@@ -53,19 +53,19 @@ This is the first exercise of SOP subject.
    
    **Response**
    ```json
-    {
+   {
       "Success": true|false
-    }
+   }
    ```
    
- - `POST` \product\remove?id={product_id}
+ - **`POST`** \product\remove?id=`{product_id}`
    
    Remove product by product_id from watch shop.
    
    **Response**
    ```json
-     {
-       "Success": true|false
-     }
+   {
+     "Success": true|false
+   }
    ```
    

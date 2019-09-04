@@ -3,7 +3,7 @@ package com.smartshop;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SmartshopStore {
+public class SmartshopFactory {
     private static int runId = 0;
     private static List<Watch> watches = new ArrayList<>();
 
