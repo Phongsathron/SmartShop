@@ -16,8 +16,12 @@ import java.util.Map;
 public class SmartshopController {
 
     @RequestMapping("/product/all")
-    public List<Watch> index(){
-        return SmartshopFactory.getAll();
+    public List<Watch> index(@RequestParam(value = "brand", defaultValue = "") String brand){
+        if(brand.equals("")) {
+            return SmartshopFactory.getAll();
+        }else{
+            return SmartshopFactory.getByBrand(brand);
+        }
     }
 
     @RequestMapping("/product/add")

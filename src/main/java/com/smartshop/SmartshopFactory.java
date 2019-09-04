@@ -65,4 +65,14 @@ public class SmartshopFactory {
         return false;
     }
 
+    public static List<Watch> getByBrand(String brand){
+        List<Watch> results = new ArrayList<>();
+        for(int i = 0; i < watches.size(); i++){
+            if(watches.get(i).getBrand().toLowerCase().equals(brand.toLowerCase())){
+                results.add(watches.get(i));
+            }
+        }
+        return results;
+    }
+
 }

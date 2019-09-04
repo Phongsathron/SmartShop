@@ -35,6 +35,32 @@ This is the first exercise of SOP subject.
     }
   ]
   ```
+ - **`GET`** \product\all?brand=`{brand_name}`
+    
+    Return products by `brand_name`
+    
+    `Example:`  `\product\all?brand=casio`
+    
+    ```json
+    [
+      {
+        "id": 2,
+        "productName": "Mens Casio Edifice Bluetooth Triple Connect Toro Rosso Special Edition Alarm Chronograph Watch EQB-800TR-1AER",
+        "brand": "Casio",
+        "price": 560.0,
+        "content": "The Casio Edifice Bluetooth Triple Connect Toro Rosso Special Edition EQB-800TR-1AER is an amazing and attractive Gents watch. The latest iteration of Casio's Edifice family includes their new Triple Connect system, linking to radio time signals, GPS and Bluetooth to ensure your watch is constantly accurate, and display the time in over 300 city time zones around the world. ",
+        "imageURL": "https://d1rkccsb0jf1bk.cloudfront.net/products/100014542/main/large/eqb-800tr-1aer-1500993057-2485.jpg"
+      },
+      {
+        "id": 3,
+        "productName": "productName",
+        "brand": "Casio",
+        "price": 5.0,
+        "content": "content",
+        "imageURL": "imageURL5"
+      }
+    ]
+    ```
   
  - **`POST`** \product\add
     
@@ -54,7 +80,7 @@ This is the first exercise of SOP subject.
    **Response**
    ```json
    {
-     "Success": true|false
+       "Success": true|false
    }
    ```
    
@@ -65,7 +91,7 @@ This is the first exercise of SOP subject.
    **Response**
    ```json
    {
-     "Success": true|false
+       "Success": true|false
    }
    ```
    
