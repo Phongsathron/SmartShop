@@ -1,4 +1,4 @@
-package com.smartshop;
+package com.smartshop.smartshop;
 
 public class Watch {
     private long id;
@@ -8,16 +8,16 @@ public class Watch {
     private String content;
     private String imageURL;
 
-    public Watch(long id, String productName, String brand, double price, String content, String imageURL) {
-        this.id = id;
-        this.productName = productName;
-        this.brand = brand;
-        this.price = price;
-        this.content = content;
-        this.imageURL = imageURL;
-    }
+//    public Watch(long id, String productName, String brand, double price, String content, String imageURL) {
+//        this.id = id;
+//        this.productName = productName;
+//        this.brand = brand;
+//        this.price = price;
+//        this.content = content;
+//        this.imageURL = imageURL;
+//    }
 
-    public void setId(long id) {
+    protected void setId(long id) {
         this.id = id;
     }
 
