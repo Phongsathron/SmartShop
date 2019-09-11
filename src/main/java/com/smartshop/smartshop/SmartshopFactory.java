@@ -1,13 +1,19 @@
 package com.smartshop.smartshop;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.smartshop.smartshop.model.Watch;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
+@Service
 public class SmartshopFactory {
 
     private static SmartshopFactory instance = null;
-    private int runId = 0;
-    private List<Watch> watches = new ArrayList<>();
+
+    @Autowired
+    private SmartshopRepository smartshopRepository;
 
     public static SmartshopFactory getInstance(){
         if(instance == null){
@@ -17,42 +23,31 @@ public class SmartshopFactory {
     }
 
     public Watch createWatch(){
-        Watch watch = new Watch();
-        watch.setId(runId++);
-        watches.add(watch);
-        return watch;
+        return new Watch();
+    }
+
+    public Watch save(Watch watch){
+        return smartshopRepository.save(watch);
     }
 
     public List<Watch> getWatches() {
-        return watches;
+        return smartshopRepository.findAll();
     }
 
-    public Watch getWatch(int id){
-        for(int i = 0; i < runId; i++){
-            if(watches.get(i).getId() == id){
-                return watches.get(i);
-            }
-        }
-        return null;
+    public Optional<Watch> getWatch(long id){
+        return smartshopRepository.findById(id);
     }
 
-    public boolean remove(int id){
-        for(int i = 0; i < runId; i++){
-            if(watches.get(i).getId() == id){
-                watches.remove(id);
-                return true;
-            }
+    public boolean remove(long id){
+        if(smartshopRepository.existsById(id)){
+            smartshopRepository.deleteById(id);
+            return true;
         }
         return false;
     }
 
     public List<Watch> getByBrand(String brand){
-        List<Watch> results = new ArrayList<>();
-        for(int i = 0; i < runId; i++){
-            if(watches.get(i).getBrand().toLowerCase().equals(brand)){
-                results.add(watches.get(i));
-            }
-        }
+        List<Watch> results = smartshopRepository.findByBrandIgnoreCase(brand);
         return results;
     }
 
