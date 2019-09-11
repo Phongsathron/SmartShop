@@ -5,8 +5,16 @@ import java.util.List;
 
 public class SmartshopFactory {
 
+    private static SmartshopFactory instance = null;
     private int runId = 0;
     private List<Watch> watches = new ArrayList<>();
+
+    public static SmartshopFactory getInstance(){
+        if(instance == null){
+            instance = new SmartshopFactory();
+        }
+        return instance;
+    }
 
     public Watch createWatch(){
         Watch watch = new Watch();

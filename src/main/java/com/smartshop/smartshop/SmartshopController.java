@@ -12,10 +12,10 @@ import java.util.Map;
 @RestController
 public class SmartshopController {
 
-    public static SmartshopFactory smartshopFactory = new SmartshopFactory();
-
     @RequestMapping(value = "/product/all", method = RequestMethod.GET)
     public List<Watch> index(@RequestParam(value = "brand", defaultValue = "") String brand){
+        SmartshopFactory smartshopFactory = SmartshopFactory.getInstance();
+
         if(brand.equals("")) {
             return smartshopFactory.getWatches();
         }else{
@@ -25,6 +25,8 @@ public class SmartshopController {
 
     @RequestMapping(value = "/product/add", method = RequestMethod.POST)
     public Map<String, Object> add(@RequestBody Watch watch){
+        SmartshopFactory smartshopFactory = SmartshopFactory.getInstance();
+
         Watch newWatch = smartshopFactory.createWatch();
         newWatch.setProductName(watch.getProductName());
         newWatch.setBrand(watch.getBrand());
@@ -40,6 +42,8 @@ public class SmartshopController {
 
     @RequestMapping(value = "/product/{id}", method = RequestMethod.DELETE)
     public Map<String, Boolean> remove(@PathVariable("id") int id){
+        SmartshopFactory smartshopFactory = SmartshopFactory.getInstance();
+
         HashMap<String, Boolean> response = new HashMap<>();
         response.put("Success", smartshopFactory.remove(id));
         return response;
@@ -47,10 +51,14 @@ public class SmartshopController {
 
     @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
     public Watch get(@PathVariable("id") int id){
+        SmartshopFactory smartshopFactory = SmartshopFactory.getInstance();
+
         return smartshopFactory.getWatch(id);
     }
 
     public static void main(String[] args){
+        SmartshopFactory smartshopFactory = SmartshopFactory.getInstance();
+
         Watch watch1 = smartshopFactory.createWatch();
         watch1.setProductName("Mens Hugo Boss Watch 1513394");
         watch1.setBrand("Hugo Boss");
