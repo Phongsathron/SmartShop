@@ -1,6 +1,7 @@
-package com.smartshop.smartshop;
+package com.smartshop.smartshop.controller;
 
 import com.smartshop.smartshop.model.Watch;
+import com.smartshop.smartshop.repository.SmartshopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

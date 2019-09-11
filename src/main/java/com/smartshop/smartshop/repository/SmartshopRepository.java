@@ -1,4 +1,4 @@
-package com.smartshop.smartshop;
+package com.smartshop.smartshop.repository;
 
 import com.smartshop.smartshop.model.Watch;
 import org.springframework.data.jpa.repository.JpaRepository;

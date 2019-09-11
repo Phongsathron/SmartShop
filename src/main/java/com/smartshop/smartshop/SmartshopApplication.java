@@ -1,5 +1,6 @@
 package com.smartshop.smartshop;
 
+import com.smartshop.smartshop.controller.SmartshopFactory;
 import com.smartshop.smartshop.model.Watch;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -16,7 +17,7 @@ import java.util.Optional;
 @SpringBootApplication
 @RestController
 @EnableAutoConfiguration
-public class SmartshopController {
+public class SmartshopApplication {
 
     @Autowired
     private SmartshopFactory smartshopFactory = SmartshopFactory.getInstance();
@@ -56,8 +57,6 @@ public class SmartshopController {
 
     @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
     public Optional<Watch> get(@PathVariable("id") long id){
-        System.out.println(id);
-        System.out.println(smartshopFactory.getWatch(id));
         return smartshopFactory.getWatch(id);
     }
 
@@ -88,6 +87,6 @@ public class SmartshopController {
 //        watch2.setPrice(560.00);
 //        smartshopFactory.save(watch2);
 
-        SpringApplication.run(SmartshopController.class, args);
+        SpringApplication.run(SmartshopApplication.class, args);
     }
 }
